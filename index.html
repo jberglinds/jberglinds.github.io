@@ -1,12 +1,108 @@
 <!DOCTYPE html>
-<html lang="sv">
+<html>
 <head>
-	<title></title>
+  <meta charset="utf-8">
+  <title>Jonathan Berglind</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-	<link rel="stylesheet" type="text/css" href="style.css">
+  <!-- CSS Reset -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/3.0.3/normalize.css">
+
+  <!-- Bootstrap 4 and JQuery -->
+  <link rel="stylesheet" href="bootstrap/css/bootstrap.css" media="screen" title="no title" charset="utf-8">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+  <script type="text/javascript" src="bootstrap/js/bootstrap.min.js"></script>
+
+  <!-- Personal stylesheet -->
+  <link rel="stylesheet" href="css/personal.css" media="screen" title="no title" charset="utf-8">
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+
+  <!-- RandomColor.js -->
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/randomcolor/0.4.4/randomColor.js"></script>
+
+  <script type="text/javascript">
+  $(document).ready(function() {
+    // Smooth scroll to top after clicking navbar-brand item.
+    $("a[href='#top']").click(function() {
+      $("html, body").animate({ scrollTop: 0 }, "slow");
+      return false;
+    });
+
+    // Change header color on 'c'-keypress
+    $(document).keypress(function(e) {
+      if(e.which == 99  ) {
+        headerColor = randomColor({ luminosity: 'dark' });
+        $('.splash-container').css('background-color', headerColor);
+      }
+    });
+  });
+
+  // Attach navbar to top of window and show navbar-brand when scrolled past header.
+  $(window).scroll(function() {
+    if( $(this).scrollTop() > $('.content-wrapper').position().top ) {
+      $('.navbar').addClass('navbar-fixed-top');
+      $('.content-wrapper').addClass('pad-content');
+      $('.navbar-brand').removeClass('hidden-xl-down');
+    } else {
+      $('.navbar').removeClass('navbar-fixed-top');
+      $('.content-wrapper').removeClass('pad-content');
+      $('.navbar-brand').addClass('hidden-xl-down');
+    }
+  });
+  </script>
+
 </head>
 <body>
+  <div class="splash-container">
+    <div class="splash-content container text-xs-center">
+      <h1 class="display-4">Jonathan Berglind</h1>
+      <p>
+        Här tänkte jag att det skulle stå en liten kort text om mig. Inte alltför lång men inte heller alltför kort.
+      </p>
+    </div>
+    <img class="pusheen" src="img/pusheen.png" alt="" />
+  </div>
 
+  <div class="content-wrapper">
+    <nav class="navbar navbar-full navbar-dark bg-inverse"  style="text-align: center">
+      <div class="container">
+        <ul class="nav navbar-nav">
+          <li class="nav-item active">
+            <a class="nav-link" href="#">Portfolio <span class="sr-only">(current)</span></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">CV</a>
+          </li>
+        </ul>
+
+        <div class="center-nav">
+          <a class="navbar-brand hidden-xs-down hidden-xl-down" href="#top">Jonathan Berglind</a>
+        </div>
+
+        <ul class="nav navbar-nav pull-xs-right">
+          <li class="nav-item">
+            <a class="nav-link" href="mailto:jonathan@berglind.io"><i class="fa fa-envelope"></i></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="https://facebook.com/jonathan.berglind"><i class="fa fa-facebook"></i></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="https://se.linkedin.com/in/jonathanberglind"><i class="fa fa-linkedin-square"></i></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="https://github.com/jberglinds"><i class="fa fa-github-alt"></i></a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+    <div class="container">
+      <br>
+      <div style="height: 1000px;">
+        <code>&#60;-- Under construction --&#62;</code>
+      </div>
+    </div>
+  </div>
 </body>
 </html>
-<!-- Nothing to see here... -->
