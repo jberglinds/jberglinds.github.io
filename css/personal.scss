@@ -1,12 +1,15 @@
 $header-font: -apple-system, ".SFNSDisplay-Light", HelveticaNeue, Helvetica, Arial, "Lucida Grande", sans-serif;
+@import url(https://fonts.googleapis.com/css?family=Roboto+Mono|Open+Sans);
 
 body {
-  font-family: $header-font;
+  font-family: Open Sans, sans-serif;
 }
 
 // The header which the content will slide over.
 .splash-container {
-    background: #750083;
+    background: #B24592; /* fallback for old browsers */
+    background: -webkit-linear-gradient(to left, #B24592 , #F15F79); /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to left, #B24592 , #F15F79); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
     z-index: -1;
     /* The following styles are required for the "scroll-over" effect */
     width: 100%;
@@ -27,13 +30,39 @@ body {
 
     h1 {
       font-weight: 100;
-      font-size: 7vmax;
+      font-size: 6vmax;
+      font-family: Roboto Mono;
     }
 
     p {
       opacity: 0.8;
       font-size: 3vmin;
+      font-family: Roboto Mono;
     }
+}
+
+.term::after {
+  content: '_';
+  opacity: 0;
+  animation: cursor 1s 5;
+}
+
+@keyframes cursor {
+	0% {
+		opacity: 0;
+	}
+	40% {
+		opacity: 0;
+	}
+	50% {
+		opacity: 1;
+	}
+	90% {
+		opacity: 1;
+	}
+	100% {
+		opacity: 0;
+	}
 }
 
 .pusheen {
@@ -51,9 +80,9 @@ body {
     width: 100%;
     z-index: 0;
     background: white;
-    -webkit-box-shadow: 0px 24px 43px 28px rgba(0,0,0,0.75);
-    -moz-box-shadow: 0px 24px 43px 28px rgba(0,0,0,0.75);
-    box-shadow: 0px 24px 43px 28px rgba(0,0,0,0.75);
+    -webkit-box-shadow: 0px 24px 43px 10px rgba(0,0,0,0.75);
+    -moz-box-shadow: 0px 24px 43px 10px rgba(0,0,0,0.75);
+    box-shadow: 0px 24px 43px 10px rgba(0,0,0,0.75);
 }
 
 // Pad the content below the navbar when it sticks to the top.
@@ -81,4 +110,10 @@ body {
     position: relative;
     top: 5px;
   }
+}
+
+.navbar {
+  -webkit-box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+  -moz-box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
 }
