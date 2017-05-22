@@ -4,7 +4,7 @@
     "repository": "git@github.com:jberglinds/jberglinds.github.io.git",
     "author": "Jonathan Berglind",
     "scripts": {
-        "start": "browser-sync start --server --files '*.css, *.html, *.js'"
+        "start": "browser-sync start --server --files '*.html, css/*.css, js/*.js'"
     },
     "dependencies": {
         "browser-sync": "^2.18.12"
