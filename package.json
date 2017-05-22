@@ -1,0 +1,12 @@
+{
+    "name": "jberglinds.github.io",
+    "version": "1.0.0",
+    "repository": "git@github.com:jberglinds/jberglinds.github.io.git",
+    "author": "Jonathan Berglind",
+    "scripts": {
+        "start": "browser-sync start --server --files '*.css, *.html, *.js'"
+    },
+    "dependencies": {
+        "browser-sync": "^2.18.12"
+    }
+}
